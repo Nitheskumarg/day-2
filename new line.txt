@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char sentence[1000]; // Assuming the sentence won't exceed 1000 characters
+    
+    // Prompt user for input
+    printf("Enter a sentence: ");
+    fgets(sentence, sizeof(sentence), stdin);
+    
+    // Iterate over each character in the sentence
+    for (int i = 0; i < strlen(sentence); i++) {
+        // If the current character is a space or a newline, replace it with a newline character
+        if (sentence[i] == ' ' || sentence[i] == '\n') {
+            printf("\n");
+        } else {
+            // Otherwise, print the character
+            printf("%c", sentence[i]);
+        }
+    }
+    
+    return 0;
+}
